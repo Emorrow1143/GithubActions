@@ -6,6 +6,8 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
+      - name: Run Unit Tests
+        run: mono ./packages/NUnit.ConsoleRunner.*/tools/nunit3-console.exe ./Tests/bin/Release/Tests.dll
       - uses: actions/checkout@v2
       - uses: actions/setup-dotnet@v1
         with:
